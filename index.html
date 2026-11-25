@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Бібліотека — Лабораторна робота</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Бібліотека</h1>
+
+    <div class="tabs" id="tabs">
+        <button class="tab-btn active" data-tab="books">Книги</button>
+        <button class="tab-btn" data-tab="readers">Читачі</button>
+        <button class="tab-btn" data-tab="loans">Видачі книг</button>
+    </div>
+
+    <!-- ===== КНИГИ ===== -->
+    <div class="tab-content active" id="books">
+        <div class="toolbar">
+            <h2>Книги</h2>
+            <button class="add-btn" data-entity="books">+ Додати книгу</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Назва</th>
+                    <th>Автор</th>
+                    <th>Рік видання</th>
+                    <th>Жанр</th>
+                    <th>ISBN</th>
+                    <th>Кількість сторінок</th>
+                    <th>У наявності</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="books-body"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== ЧИТАЧІ ===== -->
+    <div class="tab-content" id="readers">
+        <div class="toolbar">
+            <h2>Читачі</h2>
+            <button class="add-btn" data-entity="readers">+ Додати читача</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ПІБ</th>
+                    <th>Дата народження</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                    <th>Адреса</th>
+                    <th>Номер квитка</th>
+                    <th>Дата реєстрації</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="readers-body"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== ВИДАЧІ ===== -->
+    <div class="tab-content" id="loans">
+        <div class="toolbar">
+            <h2>Видачі книг</h2>
+            <button class="add-btn" data-entity="loans">+ Додати видачу</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Читач</th>
+                    <th>Книга</th>
+                    <th>Дата видачі</th>
+                    <th>Дата повернення (план)</th>
+                    <th>Дата повернення (факт)</th>
+                    <th>Статус</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="loans-body"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== МОДАЛЬНЕ ВІКНО (форма додавання) ===== -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Додати запис</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <form id="add-form">
+                <div id="form-fields"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" id="btn-cancel">Скасувати</button>
+                    <button type="submit" class="btn-submit">Зберегти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== ПОПАП-ПОВІДОМЛЕННЯ (помилка видалення) ===== -->
+    <div class="modal-overlay" id="alert-overlay">
+        <div class="modal modal-small">
+            <div class="modal-header">
+                <h3>Помилка</h3>
+                <button class="modal-close" id="alert-close">&times;</button>
+            </div>
+            <p id="alert-text">...</p>
+            <div class="modal-footer">
+                <button type="button" class="btn-submit" id="alert-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
